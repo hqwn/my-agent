@@ -1,0 +1,11 @@
+langchain
+langchain-openai
+langchain-core
+openai
+openrouter
+python-dotenv
+requests
+ddgs
+pathlib
+streamlit
+pandas
