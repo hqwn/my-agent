@@ -77,7 +77,7 @@ pip install -r requirements.txt
 
 ```bash
 cd python
-cp .env.example .env
+copy .env.example .env
 ```
 REMEMBER TO FILL IN THE API KEYS IN THE .env FILE (AI API key required, but BRAVE SEARCH API key isn't required; if not provided, it will automatically switch to DuckDuckGo search, which is free)
 
