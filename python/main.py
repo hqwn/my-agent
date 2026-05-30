@@ -9,7 +9,7 @@ import os
 from tools import tools_list
 
 #Importing the system prompt
-with open('./txt_files/system.txt', 'r') as file:
+with open('../txt_files/system.txt', 'r') as file:
     system_prompt = file.read()
 
 
