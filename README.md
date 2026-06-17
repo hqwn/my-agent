@@ -54,7 +54,35 @@ That concludes the list of tools the agent can use; now let's talk about the pro
 
 Now, finally, let's talk about the agent's system prompt. The system prompt is carefully crafted using me/claude/and random smart engineers on the internet. The system prompt basically tells the agent about the tools it has and how to use them. It also tells the agent not to overcomplicate code. Like, if the user asks it to write a function that adds 2 numbers, it shouldn't write 100 lines of code with classes and stuff, but rather a simple function that adds 2 numbers. The system prompt also tells the agent to use different AI's for different tasks, which I mentioned earlier.
 
-## How to set it up (Right now, only for Hack Club members)
+
+
+## (First way of setting up; recommended) Setting Up Using the Release (Right now, only for Hack Club members)
+
+You can set up the Agent using 2 ways: the release way or by cloning the repo. If you don't want to clone the repository, install Python, or deal with terminal dependencies, you can download the fully packaged, standalone desktop version of the agent directly.
+
+### 1. Download the Package
+* Go to the [Latest Releases Page](https://github.com/hqwn/my-agent/releases/tag/v1.0.1).
+* Under **Assets**, download the compressed zip archive: `my-agent.zip`.
+
+### 2. Extract the Files
+* Locate the downloaded `.zip` file on your computer.
+* Right-click the file and select **Extract All...** to unpack the folder contents. 
+> **Important:** Do not try to run the application from inside the zip file directly; it must be fully extracted first so the internal dependencies can load correctly.
+
+### 3. Configure Your Environment Keys
+
+1. Open the main extracted folder.
+2. Find the pre-included **`.env.example`** file sitting right next to the executable.
+3. Rename it to exactly **`.env`** (make sure to remove the `.example` extension).
+4. Open the `.env` file in any text editor (like Notepad) and fill in your Hack Club tokens:
+   * **HACK_CLUB_AI:** Paste your key from [ai.hackclub.com](https://ai.hackclub.com/)
+   * **BRAVE_SEARCH_API_KEY (Optional):** Paste your key from [search.hackclub.com](https://search.hackclub.com/) (If left blank, the agent smoothly falls back to DuckDuckGo search).
+
+### 4. Launch the Agent
+* In that same main folder, double-click **`my-agent.exe`**.
+* A terminal window will spin up the local background server, and your default web browser will automatically open up the Streamlit UI dashboard at `http://localhost:8501`
+
+## (Second way of setting it up) Setting it up by cloning the repo (Right now, only for Hack Club members)
 
 1. Clone the repo and cd into it
 
