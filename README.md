@@ -41,7 +41,7 @@ The AI agent is built using Python and LangChain. The main way I made it agentic
 That concludes the different AI's the agent can use; now let's get into the tools aat itsdisposal it can use:
 
 
-- **Search**: Pretty self-explanatory, searches the web; It uses the brave search API, but if that isn't working for some reason, it automatically switches to DuckDuckGo search, which is free.
+- **Search**: Pretty self-explanatory, searches the web; It uses the Brave search API, but if that isn't working for some reason, it automatically switches to DuckDuckGo search, which is free.
 
 - **Read File**: It can read files if the user uploads a path to a file; if the file is too large, it uses the Python tool to analyze the file in chunks.
 
@@ -56,48 +56,51 @@ Now, finally, let's talk about the agent's system prompt. The system prompt is c
 
 
 
-## (First way of setting up; recommended) Setting Up Using the Release (Right now, only for Hack Club members)
+---
 
-You can set up the Agent using 2 ways: the release way or by cloning the repo. If you don't want to clone the repository, install Python, or deal with terminal dependencies, you can download the fully packaged, standalone desktop version of the agent directly.
+#Setting up right now is only for Hack Club members
 
-### 1. Download the Package
+## (First way of setting up; recommended) Setting Up Using the Release 
+
+You can set up the Agent using 2 ways: the release way or by cloning the repo. If you don't want to clone the repository, install Python, or deal with terminal dependencies, you can download the release .exe file by itself.
+
+### 1. Download the package
 * Go to the [Latest Releases Page](https://github.com/hqwn/my-agent/releases/tag/v1.0.1).
-* Under **Assets**, download the compressed zip archive: `my-agent.zip`.
+* Go to the **Assets** section and download the compressed zip called: `my-agent.zip`.
 
 ### 2. Extract the Files
-* Locate the downloaded `.zip` file on your computer.
-* Right-click the file and select **Extract All...** to unpack the folder contents. 
-> **Important:** Do not try to run the application from inside the zip file directly; it must be fully extracted first so the internal dependencies can load correctly.
+* Go to the `my-agent.zip` file on your computer that you just downloaded, and extract all the contents.
+> **Important:** Extract the folder before running the .exe
 
-### 3. Configure Your Environment Keys
+### 3. Fill in your .env
 
-1. Open the main extracted folder.
-2. Find the pre-included **`.env.example`** file sitting right next to the executable.
-3. Rename it to exactly **`.env`** (make sure to remove the `.example` extension).
-4. Open the `.env` file in any text editor (like Notepad) and fill in your Hack Club tokens:
+1. Open the extracted folder.
+2. Find the **`.env.example`** file by the .exe.
+3. Rename it to **`.env`** with nothing in front or after, exactly **`.env`**.
+4. Open the **`.env`** file and fill in your Hack Club API keys:
    * **HACK_CLUB_AI:** Paste your key from [ai.hackclub.com](https://ai.hackclub.com/)
-   * **BRAVE_SEARCH_API_KEY (Optional):** Paste your key from [search.hackclub.com](https://search.hackclub.com/) (If left blank, the agent smoothly falls back to DuckDuckGo search).
+   * **BRAVE_SEARCH_API_KEY (Optional):** Paste your key from [search.hackclub.com](https://search.hackclub.com/) (If you dont fill this out, it automatically switches to DuckDuckGoSearch).
 
-### 4. Launch the Agent
-* In that same main folder, double-click **`my-agent.exe`**.
-* A terminal window will spin up the local background server, and your default web browser will automatically open up the Streamlit UI dashboard at `http://localhost:8501`
+### 4. Run the Agent
+* Double-click the **`my-agent.exe`** file.
+* Then the file will automatically open up the streamlit UI at `http://localhost:8501`
 
-## (Second way of setting it up) Setting it up by cloning the repo (Right now, only for Hack Club members)
+## (Second way of setting it up) Setting it up by cloning the repo 
 
-1. Clone the repo and cd into it
+1. Clone the repo and go into it
 
 ```bash
 git clone https://github.com/hqwn/my-agent
 cd my-agent
 ```
 
-2. Install the requirements
+2. Install all of the requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Clone the .env.example file and fill in the required API keys. If you are a Hack Club member, you can get the API keys for free from these websites.
+3. Copy the .env.example to .env after going into the python folder and fill out your API keys, code below, along with how to get API key
 
 - AI API key: https://ai.hackclub.com/
 
@@ -107,9 +110,10 @@ pip install -r requirements.txt
 cd python
 copy .env.example .env
 ```
-REMEMBER TO FILL IN THE API KEYS IN THE .env FILE (AI API key required, but BRAVE SEARCH API key isn't required; if not provided, it will automatically switch to DuckDuckGo search, which is free)
 
-4. Run the streamlit app (make sure you are in the Python folder)
+REMEMBER TO FILL IN THE API KEYS IN THE .env FILE (AI API key required, but BRAVE SEARCH API key isn't required; If you don't fill the Brave Search Api key, it just uses DuckDuckGo Search, which doesn't need an API key)
+
+4. Run the project
 
 ```bash
 python -m streamlit run ui.py
